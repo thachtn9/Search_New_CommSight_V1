@@ -28,97 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.panel1.SuspendLayout();
+            this.pnlLineB = new System.Windows.Forms.Panel();
+            this.pnlLineL = new System.Windows.Forms.Panel();
+            this.txtMedia = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // pnlLineB
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.pnlLineB.BackColor = System.Drawing.Color.Silver;
+            this.pnlLineB.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlLineB.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.pnlLineB.Location = new System.Drawing.Point(0, 74);
+            this.pnlLineB.Name = "pnlLineB";
+            this.pnlLineB.Size = new System.Drawing.Size(589, 5);
+            this.pnlLineB.TabIndex = 2;
             // 
-            // label2
+            // pnlLineL
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.pnlLineL.BackColor = System.Drawing.Color.Silver;
+            this.pnlLineL.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLineL.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.pnlLineL.Location = new System.Drawing.Point(0, 0);
+            this.pnlLineL.Name = "pnlLineL";
+            this.pnlLineL.Size = new System.Drawing.Size(10, 74);
+            this.pnlLineL.TabIndex = 3;
             // 
-            // checkBox1
+            // txtMedia
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(26, 67);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(53, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "News";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.txtMedia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtMedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMedia.ForeColor = System.Drawing.Color.Green;
+            this.txtMedia.Location = new System.Drawing.Point(10, 0);
+            this.txtMedia.Name = "txtMedia";
+            this.txtMedia.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
+            this.txtMedia.Size = new System.Drawing.Size(579, 36);
+            this.txtMedia.TabIndex = 4;
+            this.txtMedia.Text = "Vietnamnet.vn";
+            this.txtMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtMedia.Click += new System.EventHandler(this.txtUrl_Click);
+            this.txtMedia.MouseEnter += new System.EventHandler(this.uctNews_MouseEnter);
+            this.txtMedia.MouseLeave += new System.EventHandler(this.uctNews_MouseLeave);
             // 
-            // checkBox2
+            // txtTitle
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(112, 67);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 3;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.checkBox3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(417, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(96, 96);
-            this.panel1.TabIndex = 4;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(22, 40);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(53, 17);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "News";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.txtTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTitle.Font = new System.Drawing.Font("Adobe Arabic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(13)))), ((int)(((byte)(171)))));
+            this.txtTitle.Location = new System.Drawing.Point(10, 36);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(579, 38);
+            this.txtTitle.TabIndex = 5;
+            this.txtTitle.Text = "asd kjasd adf sd fjsdhf                kjhdf ksdhf";
+            this.txtTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtTitle.Click += new System.EventHandler(this.txtUrl_Click);
+            this.txtTitle.MouseEnter += new System.EventHandler(this.uctNews_MouseEnter);
+            this.txtTitle.MouseLeave += new System.EventHandler(this.uctNews_MouseLeave);
             // 
             // uctNews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.txtMedia);
+            this.Controls.Add(this.pnlLineL);
+            this.Controls.Add(this.pnlLineB);
             this.Name = "uctNews";
-            this.Size = new System.Drawing.Size(513, 96);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Size = new System.Drawing.Size(589, 79);
+            this.Load += new System.EventHandler(this.uctNews_Load);
+            this.MouseEnter += new System.EventHandler(this.uctNews_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.uctNews_MouseLeave);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Panel pnlLineB;
+        private System.Windows.Forms.Panel pnlLineL;
+        private System.Windows.Forms.Label txtMedia;
+        private System.Windows.Forms.Label txtTitle;
     }
 }
