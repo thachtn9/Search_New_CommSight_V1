@@ -8,6 +8,11 @@ namespace Search_New_CommSight_V1.Model
 {
     class News
     {
+        private string Headline { get; set; }
+
+        private string Url { get; set; }
+
+        private string MediaTitle { get; set; }
 
     }
 }

@@ -14,10 +14,12 @@ namespace Search_New_CommSight_V1.Uct
     public delegate void ClickNewsEventHandler(string url);
     public partial class uctNews : UserControl
     {
-        private string media;
-        private string titel;
-        private string url;
-       
+
+        public string media { get; set; }
+        public string time { get; set; }
+        public string titel { get; set; }
+        public string url { get; set; }
+        public bool is_check { get; set; }
 
         public event ClickNewsEventHandler News_Click;
         public uctNews()
@@ -25,19 +27,23 @@ namespace Search_New_CommSight_V1.Uct
             InitializeComponent();
         }
 
-        public uctNews(string titel, string url)
+        public uctNews(string titel, string time,string url)
         {
             InitializeComponent();
             this.titel = titel;
             this.url = url;
-            
-        }              
+            this.time = time;
+            is_check = false;
+
+
+        }        
+        
 
         private void uctNews_Load(object sender, EventArgs e)
         {
             getMedia();
             txtMedia.Text = media;
-            txtTitle.Text = titel;
+            txtTitle.Text = time + titel;
         }
 
         private void txtUrl_Click(object sender, EventArgs e)
@@ -65,6 +71,11 @@ namespace Search_New_CommSight_V1.Uct
         private void uctNews_MouseLeave(object sender, EventArgs e)
         {
             pnlLineL.BackColor = pnlLineB.BackColor = Color.Silver;
+        }
+
+        private void chkChoose_CheckedChanged(object sender, EventArgs e)
+        {
+            is_check = chkChoose.Checked;
         }
     }
 }
