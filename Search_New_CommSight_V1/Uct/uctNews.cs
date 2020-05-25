@@ -21,6 +21,8 @@ namespace Search_New_CommSight_V1.Uct
         public string url { get; set; }
         public bool is_check { get; set; }
 
+        private Color colUn = Color.Silver;
+
         public event ClickNewsEventHandler News_Click;
         public uctNews()
         {
@@ -70,12 +72,23 @@ namespace Search_New_CommSight_V1.Uct
 
         private void uctNews_MouseLeave(object sender, EventArgs e)
         {
-            pnlLineL.BackColor = pnlLineB.BackColor = Color.Silver;
+            pnlLineL.BackColor = pnlLineB.BackColor = colUn;
         }
 
         private void chkChoose_CheckedChanged(object sender, EventArgs e)
         {
+            if (colUn == Color.OrangeRed)
+            {
+                chkChoose.Checked = false;
+                return;
+            }
             is_check = chkChoose.Checked;
+        }
+        public void unCheckNewOld()
+        {
+            chkChoose.Checked = false;
+            colUn = Color.OrangeRed;
+            pnlLineL.BackColor = pnlLineB.BackColor = colUn;
         }
     }
 }

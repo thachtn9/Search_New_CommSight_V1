@@ -34,8 +34,12 @@
             this.pnlRight = new System.Windows.Forms.Panel();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.pnlRightT = new System.Windows.Forms.Panel();
+            this.btnGooogle = new System.Windows.Forms.Button();
             this.pnlRightB = new System.Windows.Forms.Panel();
             this.dgvListNews = new System.Windows.Forms.DataGridView();
+            this.colHeadline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMediaTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClear = new AltoControls.AltoButton();
             this.btnAddDataNews = new AltoControls.AltoButton();
@@ -57,10 +61,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.trBTile = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.colHeadline = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMediaTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnGooogle = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.pnlRightT.SuspendLayout();
@@ -126,6 +126,17 @@
             this.pnlRightT.Size = new System.Drawing.Size(928, 486);
             this.pnlRightT.TabIndex = 1;
             // 
+            // btnGooogle
+            // 
+            this.btnGooogle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGooogle.BackgroundImage")));
+            this.btnGooogle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGooogle.Location = new System.Drawing.Point(0, 0);
+            this.btnGooogle.Name = "btnGooogle";
+            this.btnGooogle.Size = new System.Drawing.Size(45, 46);
+            this.btnGooogle.TabIndex = 19;
+            this.btnGooogle.UseVisualStyleBackColor = true;
+            this.btnGooogle.Click += new System.EventHandler(this.btnGooogle_Click);
+            // 
             // pnlRightB
             // 
             this.pnlRightB.Controls.Add(this.dgvListNews);
@@ -152,6 +163,24 @@
             this.dgvListNews.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvListNews.Size = new System.Drawing.Size(813, 251);
             this.dgvListNews.TabIndex = 1;
+            // 
+            // colHeadline
+            // 
+            this.colHeadline.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colHeadline.HeaderText = "Headline";
+            this.colHeadline.Name = "colHeadline";
+            // 
+            // colMediaTitle
+            // 
+            this.colMediaTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMediaTitle.HeaderText = "MediaTitle";
+            this.colMediaTitle.Name = "colMediaTitle";
+            // 
+            // colUrl
+            // 
+            this.colUrl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colUrl.HeaderText = "Url";
+            this.colUrl.Name = "colUrl";
             // 
             // panel1
             // 
@@ -364,7 +393,7 @@
             this.txtKeyWord.BackColor = System.Drawing.Color.Transparent;
             this.txtKeyWord.Br = System.Drawing.Color.White;
             this.txtKeyWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtKeyWord.ForeColor = System.Drawing.Color.DimGray;
+            this.txtKeyWord.ForeColor = System.Drawing.Color.Black;
             this.txtKeyWord.Location = new System.Drawing.Point(98, 14);
             this.txtKeyWord.Margin = new System.Windows.Forms.Padding(4);
             this.txtKeyWord.Name = "txtKeyWord";
@@ -446,41 +475,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "KeyWord";
             // 
-            // colHeadline
-            // 
-            this.colHeadline.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colHeadline.HeaderText = "Headline";
-            this.colHeadline.Name = "colHeadline";
-            // 
-            // colMediaTitle
-            // 
-            this.colMediaTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colMediaTitle.HeaderText = "MediaTitle";
-            this.colMediaTitle.Name = "colMediaTitle";
-            // 
-            // colUrl
-            // 
-            this.colUrl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colUrl.HeaderText = "Url";
-            this.colUrl.Name = "colUrl";
-            // 
-            // btnGooogle
-            // 
-            this.btnGooogle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGooogle.BackgroundImage")));
-            this.btnGooogle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGooogle.Location = new System.Drawing.Point(0, 0);
-            this.btnGooogle.Name = "btnGooogle";
-            this.btnGooogle.Size = new System.Drawing.Size(45, 46);
-            this.btnGooogle.TabIndex = 19;
-            this.btnGooogle.UseVisualStyleBackColor = true;
-            this.btnGooogle.Click += new System.EventHandler(this.btnGooogle_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1700, 737);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;

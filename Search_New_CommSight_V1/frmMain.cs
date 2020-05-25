@@ -212,7 +212,7 @@ namespace Search_New_CommSight_V1
             int flag = 0;
             string[] a = str1.Split(' ');
             string[] b = str2.Split(' ');            
-            float re =a.Count() * (per / 10); // Tỉ lệ % so với số từ của chuỗi 1 .
+            float re =(a.Count() * per) / 10; // Tỉ lệ % so với số từ của chuỗi 1 .
             if (a.Count() == 0 || b.Count() == 0)
                 return false;
             foreach (string s1 in a)
@@ -284,15 +284,18 @@ namespace Search_New_CommSight_V1
 
         private void btnAddDataNews_Click(object sender, EventArgs e)
         {
-            //dgvListNews.Rows.Add("asdas", "asd", "33333");
-            int count = 0;
-            string headline;
-            foreach (uctNews uNews in pnlContent.Controls)
-            {
-                if(!uNews.is_check)continue; 
-                headline = getHeadlineNews(uNews.url);
-                dgvListNews.Rows.Add(headline==""?uNews.titel:headline,uNews.media,uNews.url);
-            }
+            this.Invoke(new Action(() => {
+                //  txtHtml.Text += headline + "\n" + title + "\n";
+                string headline;
+                foreach (uctNews uNews in pnlContent.Controls)
+                {
+                    if (!uNews.is_check) continue;
+                    headline = getHeadlineNews(uNews.url);
+                    dgvListNews.Rows.Add(headline == "" ? uNews.titel : headline, uNews.media, uNews.url);
+                    uNews.unCheckNewOld();
+                }
+            }));
+           
             
            
         }
@@ -301,10 +304,14 @@ namespace Search_New_CommSight_V1
         {
             string htmlNews = CrawlDataFromURL(url);
 
+          
+            string strH1 = Regex.Match(htmlNews.ToString(), @"<h1(.*?)>(.*?)<\/h1",RegexOptions.Singleline).Groups[2].ToString().Trim(); // lấy thẻ H1 làm headline.
 
-            string strH1 = Regex.Match(htmlNews.ToString(), @"<h1(.*?)>(.*?)<\/h1").Groups[2].ToString(); // lấy thẻ H1 làm headline.
-
-            string strHeadline = Regex.Match(htmlNews.ToString(), @"name=""description""(.*?)content=""(.*?)""").Groups[2].ToString();
+            if(strH1.IndexOf("class")>0)
+            {
+                strH1 = "";
+            }
+            string strHeadline = Regex.Match(htmlNews.ToString(), @"name=['""]description['""](.*?)content=['""](.*?)['""]").Groups[2].ToString();
 
             return strH1 != "" ? strH1 : strHeadline;
 
@@ -427,7 +434,7 @@ namespace Search_New_CommSight_V1
                        
                         ws.Cells[rowIndex, colIndex++].Value = row.Cells["colMediaTitle"].Value;
                        
-                        ws.Cells[rowIndex, colIndex++].Hyperlink = new Uri(row.Cells["colUrl"].Value.ToString());
+                      
                         
                         ws.Cells[rowIndex, colIndex++].Value = row.Cells["colUrl"].Value;
 
